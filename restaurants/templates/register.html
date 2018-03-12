@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+{% block nameme %}
+	Add user
+{% endblock %}
+
+{% block bodycontent %}
+
+	<form action="{% url 'register' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{my_form|crispy}}
+		<input type="submit" name="Sign Up" class="btn btn-primary full-width-button">	
+	</form>
+
+{% endblock %}
